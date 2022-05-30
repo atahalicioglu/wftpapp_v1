@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.black),
+      theme: ThemeData(primaryColor: Color.fromRGBO(2, 24, 89, 1), fontFamily: 'OpenSans'),
+
       home: LoginPage(),
     );
   }

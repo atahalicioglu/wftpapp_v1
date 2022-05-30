@@ -19,10 +19,14 @@ class HomePageState extends State<HomePage> {
       drawer:SideBar(username, password),
       appBar: AppBar(
         title: const Text('Home Page', textAlign: TextAlign.center),
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(2, 24, 89, 1),
       ),
-      body: Center(
-        child: Text('Welcome'),
+      body: ListView(
+        children: <Widget>[
+          Image.asset('lib/assets/images/logo2.png', scale:0.8),
+          Text("Welcome")
+        ]
+        ,
       ),
     );
   }

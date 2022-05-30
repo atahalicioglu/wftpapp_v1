@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "337822130704",
-    "firebase_url": "https://wftpapp-v2-default-rtdb.firebaseio.com",
-    "project_id": "wftpapp-v2",
-    "storage_bucket": "wftpapp-v2.appspot.com"
+    "project_number": "939404348274",
+    "firebase_url": "https://wftpapp-v1-default-rtdb.firebaseio.com",
+    "project_id": "wftpapp-v1",
+    "storage_bucket": "wftpapp-v1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:337822130704:android:de4c64416f9fa15b58e095",
+        "mobilesdk_app_id": "1:939404348274:android:df72b23e2ecfbd961c2beb",
         "android_client_info": {
           "package_name": "com.example.wftpapp_v1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "337822130704-a9g6mv8q169h0btkhfo3od5jofe1bbri.apps.googleusercontent.com",
+          "client_id": "939404348274-m63hm3r6u26n18fm3kdvvs0tuvt2fphn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBeoDBKXB5bm8dg-GQy77vEvjxBW0S9qQA"
+          "current_key": "AIzaSyBUcArbmvwscAWxWP20iuuWwdQl2FeVXMQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "337822130704-a9g6mv8q169h0btkhfo3od5jofe1bbri.apps.googleusercontent.com",
+              "client_id": "939404348274-m63hm3r6u26n18fm3kdvvs0tuvt2fphn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -25,8 +25,11 @@ class SideBar extends StatelessWidget {
         child: Center(child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 10,),
-            Text("Peker App")
+            SizedBox(height: 60,),
+            Container(
+              height: 100,
+              width: 100,
+              child:Image.asset('lib/assets/images/logo3.png', scale:0.4))
           ],
         )),
       ),
@@ -39,15 +42,8 @@ class SideBar extends StatelessWidget {
               MaterialPageRoute(builder: (_) => MyProfilePage(username, password)));},
         ),
         MLMenuItem(
-            leading: Icon(Icons.calendar_today_sharp),
-            content: Text("Planning"),
-            onClick: () {Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (_) => PlanningPage(username, password)));},
-        ),
-        MLMenuItem(
           leading: Icon(Icons.border_color),
-          content: Text("Future Jobs"),
+          content: Text("My Tasks"),
           onClick: () {Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (_) => FutureJobsPage(username, password)));},

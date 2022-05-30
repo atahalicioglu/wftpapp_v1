@@ -44,12 +44,12 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBeoDBKXB5bm8dg-GQy77vEvjxBW0S9qQA',
-    appId: '1:337822130704:android:de4c64416f9fa15b58e095',
-    messagingSenderId: '1:337822130704:android:de4c64416f9fa15b58e095',
-    projectId: 'wftpapp-v2',
-    databaseURL: 'https://wftpapp-v2-default-rtdb.firebaseio.com',
-    storageBucket: 'wftpapp-v2.appspot.com',
+    apiKey: 'AIzaSyBUcArbmvwscAWxWP20iuuWwdQl2FeVXMQ',
+    appId: '1:939404348274:android:df72b23e2ecfbd961c2beb',
+    messagingSenderId: '1:939404348274:android:df72b23e2ecfbd961c2beb',
+    projectId: 'wftpapp-v1',
+    databaseURL: 'https://wftpapp-v1-default-rtdb.firebaseio.com',
+    storageBucket: 'wftpapp-v1.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

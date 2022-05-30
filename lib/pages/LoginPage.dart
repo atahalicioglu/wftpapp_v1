@@ -25,7 +25,7 @@ const kTextFieldDecoration = InputDecoration(
 
 
 
-class LoginPageState extends State<LoginPage> {
+class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin {
   late String username;
   late String password;
   ScrollController _scrollController = ScrollController();
@@ -33,19 +33,29 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) => _scrollToBottom());
-
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Peker App'),
-        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: const Text('wftpapp.com'),
+        backgroundColor: Color.fromRGBO(2, 24, 89, 1),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Text('Peker App',
+              SizedBox(height: 20,),
+              Container(
+                height: 150.0,
+                width: 150.0,
+                child: Container(
+                    child: new Center(
+                      child: new Image.asset('lib/assets/images/logo3.png', fit:BoxFit.fill)
+                )),
+              ),
+              Text('wftpapp.com',
                 style:TextStyle(fontSize: 30),
                 textAlign: TextAlign.center,
               ),
@@ -59,30 +69,22 @@ class LoginPageState extends State<LoginPage> {
               username = value;
             },
             decoration: kTextFieldDecoration.copyWith(
-                hintText: 'Enter your Name')),
+                hintText: 'username')),
               SizedBox(
-                height: 8.0,
+                height: 8.0
               ),
               TextField(
                   keyboardType: TextInputType.visiblePassword,
                   textAlign: TextAlign.center,
                   cursorColor: Colors.black,
-
                   onChanged: (value) {
                   password = value;
                   },
                   decoration: kTextFieldDecoration.copyWith(
-                  hintText: 'Enter your password')),
+                  hintText: 'password')),
               SizedBox(
                 height: 8.0,
           ),
-          ///IconButton(
-              ///icon: Icon(
-                 /// CupertinoIcons.upload_circle),
-              ///onPressed: () async {
-                ///_sendEmployee(username, password);
-             /// }
-          ///),
               IconButton(
                   icon: Icon(
                    CupertinoIcons.arrow_right_circle_fill),
@@ -113,21 +115,12 @@ class LoginPageState extends State<LoginPage> {
   _checkVerification(username, password) async {
     final ref = FirebaseDatabase.instance.reference();
     final snapshot = await ref.child('Companies').child('Peker').child('Employee').child(username).child('Login_Info').get();
-    String password_check = password.toString();
-    String username_check = username.toString();
-    String check_username_v1 = ("username: " + username_check );
-    String check_username = check_username_v1.toString();
-    String check_password_v1 = ( "password: " + password_check);
-    String check_password = check_password_v1.toString();
     bool check_contain = false;
     if (snapshot != null) {
-      String info = snapshot.value.toString();
-      print(info);
-      if (info.contains(check_username) && info.contains(check_password)) {
+      var info = Map <String, dynamic>.from(snapshot.value as Map);
+      if ((info['username'] == username) && (info['password'] == password)) {
         check_contain = true;
       }
-
-      print(check_contain);
     } else {
       print('No data available.');
     }

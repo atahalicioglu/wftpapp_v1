@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'MyProfilePage.dart';
 import '../widgets/sidebar_widget.dart';
+import '../widgets/dutydetails.dart';
+
+const numwid = 2;
 
 class FutureJobsPage extends StatefulWidget {
 
@@ -26,34 +29,13 @@ class _FutureJobsPageState extends State<FutureJobsPage> {
     return Scaffold(
       drawer: SideBar(username, password),
       appBar: AppBar(
-        title: Text('Future Jobs', textAlign: TextAlign.center),
-        backgroundColor: Colors.black,
+          title: Text('My Tasks', textAlign: TextAlign.center),
+          backgroundColor: Color.fromRGBO(2, 24, 89, 1),
       ),
       body: ListView(
         padding: const EdgeInsets.all(8),
         children: <Widget>[
-          InkWell(
-          onTap: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => MyProfilePage(username, password),
-            ),
-          );
-        },
-            child:Container(
-              height: 50,
-              color: Colors.amber[600],
-              child: const Center(child: Text('Duty 1')),
-            ),
-          ),
-          Container(
-            height: 50,
-            color: Colors.amber[500],
-            child: const Center(child: Text('Duty 2')),
-          ),
-          Container(
-            height: 50,
-            color: Colors.amber[100],
-            child: const Center(child: Text('Duty 3')),
-          ),
+          DutyDetails(username, password),
         ],
       )
     );
